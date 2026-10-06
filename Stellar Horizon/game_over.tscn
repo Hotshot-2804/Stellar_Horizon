@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cj7g15cqyqcbx"]
+
+[ext_resource type="Script" uid="uid://ciib4ikf67nv0" path="res://Stellar Horizon/game_over.gd" id="1_l3hod"]
+[ext_resource type="PackedScene" uid="uid://cjre3ki0j0jte" path="res://Stellar Horizon/level.tscn" id="2_3mqjn"]
+[ext_resource type="FontFile" uid="uid://ito0fps6gbs0" path="res://Assets/Bonus/kenvector_future.ttf" id="3_vj3q8"]
+[ext_resource type="AudioStream" uid="uid://d12e52pf357s3" path="res://Assets/Bonus/GameOver.ogg" id="4_1v7sd"]
+
+[node name="GameOver" type="Control" unique_id=653009172]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l3hod")
+level_scene = ExtResource("2_3mqjn")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1962607232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.14509805, 0.36078432, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1003918387]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=470876828]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1664457532]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vj3q8")
+theme_override_font_sizes/font_size = 60
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1593414736]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vj3q8")
+theme_override_font_sizes/font_size = 35
+text = "Score: "
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1409553650]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_vj3q8")
+theme_override_font_sizes/font_size = 45
+text = "Leaderboard"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=577416740]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.5
+offset_top = -23.0
+offset_right = 99.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1355033954]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_vj3q8")
+theme_override_font_sizes/font_size = 25
+text = "Press Space to start again"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=504475549]
+stream = ExtResource("4_1v7sd")
+volume_db = -10.0
+autoplay = true

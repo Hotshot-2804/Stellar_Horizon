@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dx86qkx0q8xk6"]
+
+[ext_resource type="Script" uid="uid://bs70kxug3heit" path="res://Stellar Horizon/laser.gd" id="1_cp62n"]
+[ext_resource type="Texture2D" uid="uid://c3y06jotsy5qd" path="res://Assets/Laser.png" id="2_j7ckr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_udai2"]
+radius = 6.0
+height = 56.0
+
+[node name="Laser" type="Area2D" unique_id=679878810]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_cp62n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=114189166]
+texture = ExtResource("2_j7ckr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=964940114]
+shape = SubResource("CapsuleShape2D_udai2")

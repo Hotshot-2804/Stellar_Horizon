@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://defyrtvc1myl1"]
+
+[ext_resource type="Script" uid="uid://bbqnx46kdm7s8" path="res://Stellar Horizon/meteor.gd" id="1_5j3cf"]
+[ext_resource type="Texture2D" uid="uid://cjipvufoc6rve" path="res://Assets/Meteors/Meteor.png" id="2_6er8b"]
+[ext_resource type="AudioStream" uid="uid://c7rjnoy3ieban" path="res://Assets/Bonus/Meteor.ogg" id="3_ddx82"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udai2"]
+radius = 42.0
+
+[node name="Meteor" type="Area2D" unique_id=344793943]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_5j3cf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1716082160]
+position = Vector2(1.9073486e-06, 1.0000038)
+scale = Vector2(2, 2.093)
+texture = ExtResource("2_6er8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008747037]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_udai2")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="." unique_id=1539983473]
+stream = ExtResource("3_ddx82")
+
+[node name="MeteorTimer" type="Timer" parent="." unique_id=281524600]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

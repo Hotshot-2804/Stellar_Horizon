@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://6wilhobopere"]
+
+[ext_resource type="Script" uid="uid://bcb3emoki7xyh" path="res://Stellar Horizon/player.gd" id="1_7hjyi"]
+[ext_resource type="Texture2D" uid="uid://b5arygis2y6l8" path="res://Assets/Main Ship - Base - Full health.png" id="2_tpnay"]
+[ext_resource type="AudioStream" uid="uid://clnpd6hpbjisg" path="res://Assets/Bonus/Laser.ogg" id="3_wenx5"]
+[ext_resource type="AudioStream" uid="uid://dhrcqqebm075o" path="res://Assets/Bonus/Damage.ogg" id="4_u8jr0"]
+
+[sub_resource type="Gradient" id="Gradient_mu7yn"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mu7yn"]
+gradient = SubResource("Gradient_mu7yn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_udai2"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+gravity = Vector3(0, 100, 0)
+scale_min = 8.0
+scale_max = 15.0
+color = Color(4.0718616e-05, 0.27515382, 0.79331976, 1)
+color_ramp = SubResource("GradientTexture1D_mu7yn")
+
+[node name="Player" type="CharacterBody2D" unique_id=806808955]
+collision_mask = 6
+script = ExtResource("1_7hjyi")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1636565506]
+position = Vector2(0, 13)
+amount_ratio = 0.5
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_udai2")
+
+[node name="PlayerShip" type="Sprite2D" parent="." unique_id=1742981670]
+scale = Vector2(4.323, 4)
+texture = ExtResource("2_tpnay")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=657479536]
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(0, -13, 4, -9, 6, -4, 16, 6, 16, 12, 5, 6, 3, 6, 3, 13, 0, 12, -3, 13, -3, 6, -16, 12, -16, 5, -5, -4, -4, -9)
+
+[node name="LaserStartPos" type="Marker2D" parent="." unique_id=443409743]
+position = Vector2(0, -58)
+
+[node name="LaserTimer" type="Timer" parent="." unique_id=1570739823]
+wait_time = 0.5
+one_shot = true
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="." unique_id=181803214]
+stream = ExtResource("3_wenx5")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="." unique_id=348251330]
+stream = ExtResource("4_u8jr0")
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]

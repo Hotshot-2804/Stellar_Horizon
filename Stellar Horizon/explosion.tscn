@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://0gt44njxvv4x"]
+
+[ext_resource type="Script" uid="uid://cu37hpb3lhyus" path="res://Stellar Horizon/explosion.gd" id="1_svx3w"]
+
+[node name="Explosion" type="CPUParticles2D" unique_id=709245913]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+script = ExtResource("1_svx3w")
