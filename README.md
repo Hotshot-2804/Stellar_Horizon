@@ -18,4 +18,4 @@ Download the latest Windows and macOS builds on my [https://hotshot-2804.itch.io
 * **Visual Assets:** FoozleCC's "Void" Collection (mix of *Void Main Ship Pack* and *Void Environment Pack*)
 * **Audio Assets:** Kenney.nl (mix of Kenney digital audio and sci-fi audio)
 * **Game OST & Audio:** Eric Matyas (*Steamtech Mayhem* for Game OST, *The Darkness Below* for Game Over OST)
-* **Baseline Foundation** Inspired by and built upon Net Ninja's Godot Space Shooter series (heavily modified and expanded)
+* **Baseline Foundation:** Inspired by and built upon Net Ninja's Godot Space Shooter series (heavily modified and expanded)
