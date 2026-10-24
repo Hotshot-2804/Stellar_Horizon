@@ -57,7 +57,7 @@ func _on_meteor_collision():
 
 	# 3. Check for Game Over
 	if Global.lives <= 0:
-		get_tree().change_scene_to_file("res://Stellar Horizon/game_over.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://Stellar Horizon/game_over.tscn")
 
 func _on_player_laser(pos):
 	var laser = laser_scene.instantiate()

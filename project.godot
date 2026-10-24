@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Stellar Horizon"
-run/main_scene="uid://cjre3ki0j0jte"
+config/name="Stellar Horizon (2D)"
+run/main_scene="uid://bo4kgbhp411sl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://b5arygis2y6l8"
 
@@ -85,6 +85,7 @@ Shoot={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method.mobile="forward_plus"
+textures/vram_compression/import_etc2_astc=true
 viewport/hdr_2d=true
 
 [xr]

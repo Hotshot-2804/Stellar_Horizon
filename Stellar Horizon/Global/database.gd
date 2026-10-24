@@ -1,7 +1,7 @@
 extends Node
 
 var db: SQLite
-var db_name := "res://highscore.db"
+var db_name := "user://highscore.db"
 
 func _ready():
     # Initialize the SQLite database
